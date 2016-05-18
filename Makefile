@@ -1,6 +1,8 @@
 CFLAGS = -Wall -Wextra
 PREFIX = /usr/local
-installables := bin/no_new_privs
+export RONN_ORGANIZATION = Nicolas Braud-Santoni
+
+installables := bin/no_new_privs man/man1/no_new_privs.1
 
 .PHONY: clean default install uninstall
 default: $(notdir $(installables))
@@ -8,6 +10,8 @@ default: $(notdir $(installables))
 no_new_privs: main.c
 	$(CC) --std=c99 -o $@ $^ $(CFLAGS) $(LDFLAGS)
 
+%.1: %.1.md
+	ronn --roff $^
 
 clean:
 	rm -f $(notdir $(installables))
