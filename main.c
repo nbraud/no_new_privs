@@ -14,7 +14,7 @@ int main(int argc, char *const * argv) {
   }
 
   if (prctl(PR_SET_NO_NEW_PRIVS, 1, 0, 0, 0) != 0)
-    perror("Failed to set NO_NEW_PRIVS");
+    err(EXIT_FAILURE, "Failed to set NO_NEW_PRIVS");
 
   execvp(argv[1], argv+1);
   err(EXIT_FAILURE, "Failed to start %s", argv[1]);
