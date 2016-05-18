@@ -1,5 +1,5 @@
 // no_new_privs: A simple NO_NEW_PRIVS executor
-// Copyright (c) 2016, Nicolas Braud-Santoni `<nicolas@braud-santoni.eu>`
+// Copyright (c) 2016, Nicolas Braud-Santoni <nicolas@braud-santoni.eu>
 
 #include <err.h>
 #include <stdio.h>
@@ -7,7 +7,7 @@
 #include <unistd.h>
 #include <sys/prctl.h>
 
-int main(int argc, char *const * argv) {
+int main(int argc, char *const *argv) {
   if (argc <= 1) {
     fprintf(stdout, "Too few arguments");
     return EXIT_FAILURE;
