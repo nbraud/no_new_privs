@@ -1,3 +1,4 @@
+CFLAGS = -Wall -Wextra
 PREFIX = /usr/local
 installables := bin/no_new_privs
 
@@ -5,7 +6,7 @@ installables := bin/no_new_privs
 default: $(notdir $(installables))
 
 no_new_privs: main.c
-	$(CC) -o $@ $^ $(CFLAGS) $(LDFLAGS)
+	$(CC) --std=c99 -o $@ $^ $(CFLAGS) $(LDFLAGS)
 
 
 clean:
