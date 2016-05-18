@@ -1,3 +1,6 @@
+// no_new_privs: A simple NO_NEW_PRIVS executor
+// Copyright (c) 2016, Nicolas Braud-Santoni `<nicolas@braud-santoni.eu>`
+
 #include <err.h>
 #include <stdio.h>
 #include <stdlib.h>
