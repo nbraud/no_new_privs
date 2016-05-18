@@ -1,0 +1,3 @@
+version=3
+opts=filenamemangle=s/.+\/v?(\d\S*)\.tar\.gz/no-new-privs-$1\.tar\.gz/, \
+  https://github.com/whawty/no_new_privs/releases .*/v?(\d\S*)\.tar\.gz

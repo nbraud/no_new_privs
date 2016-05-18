@@ -1,0 +1,22 @@
+Source: no-new-privs
+Section: misc
+Priority: extra
+Maintainer: Nicolas Braud-Santoni <nicolas@braud-santoni.eu>
+Build-Depends: debhelper (>= 9), quilt, ruby-ronn
+Standards-Version: 3.9.8
+Homepage: https://github.com/whawty/no_new_privs
+Vcs-Git: https://alioth.debian.org/anonscm/git/collab-maint/no-new-privs.git
+Vcs-Browser: https://anonscm.debian.org/gitweb/?p=collab-maint/no-new-privs.git
+
+Package: no-new-privs
+Architecture: linux-any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Sets NO_NEW_PRIVS
+ A trivial program to set NO_NEW_PRIVS before executing another program.
+ .
+ With NO_NEW_PRIVS set, execve promises not to grant the privilege to do
+ anything that could not have been done without the execve syscall.
+ .
+ For example, the setuid and setgid bits will no longer change the uid or gid;
+ file capabilities will not add to the permitted set,
+ and LSMs will not relax constraints after execve.

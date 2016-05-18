@@ -1,3 +1,9 @@
 a.out
 no_new_privs
 no_new_privs.1
+
+debian/.debhelper
+debian/debhelper-build-stamp
+debian/files
+debian/no-new-privs.substvars
+debian/no-new-privs/

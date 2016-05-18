@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+
+include /usr/share/dpkg/pkg-info.mk
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/buildflags.mk
+
+%:
+	dh $@ --no-automatic-dbgsym
+
+override_dh_auto_install:
+	dh_auto_install -- PREFIX=/usr
+
+gen-orig-source:
+	git archive --prefix=$(DEB_SOURCE)-$(DEB_VERSION)/     \
+		upstream/$(subst ~,_,$(DEB_VERSION))           \
+		-o ../$(DEB_SOURCE)_$(DEB_VERSION).orig.tar.xz
