@@ -19,10 +19,10 @@ shell-like fashion, in the `PATH` environment variable; see `execvp`(3).
 EXIT STATUS
 -----------
 
-When ran successfuly, `no_new_privs` is replaced (using `execvp`(3))
+When ran successfully, `no_new_privs` is replaced (using `execvp`(3))
 by the desired program, and thus that program's exit status is used.
 
-When ran unsuccessfuly, `no_new_privs` returns `EXIT_FAILURE`.
+When ran unsuccessfully, `no_new_privs` returns `EXIT_FAILURE`.
 
 
 SEE ALSO
